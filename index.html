@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>PixHt-Lab: Pixel Height Based Light Effect Generation for Image Compositing</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+               PixHt-Lab: Pixel Height Based Light Effect Generation for Image Compositing</br>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li style="margin-right: 20px;">
+                        <a href="https://shengcn.github.io">
+                          Yichen Sheng*
+                        </a>
+                        </br>Purdue University
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="https://jimmie33.github.io/">
+                           Jianming Zhang
+                        </a>
+                        </br> Adobe
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="https://https://julienphilip.com/">
+                           Julien Philip
+                        </a>
+                        </br> Adobe
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="https://https://yannickhold.com/">
+                           Yannick Hold-Geoffroy
+                        </a>
+                        </br> Adobe
+                    </li>
+                    <br/>
+                    <li style="margin-right: 20px;">
+                        <a href="https://https://www.sunxin.name/">
+                           Xin Sun
+                        </a>
+                        </br> Adobe
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="https://sites.google.com/site/hezhangsprinter/">
+                           He Zhang
+                        </a>
+                        </br> Adobe
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="https://luling06.github.io/">
+                         Lu Ling
+                        </a>
+                        </br>Purdue University
+                    </li>
+                    <li style="margin-right: 20px;">
+                        <a href="https://www.cs.purdue.edu/homes/bbenes/">
+                          Bedrich Benes
+                        </a>
+                        </br>Purdue University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/pdf/2303.00137.pdf">
+                            <image src="figures/paper.png" height="120px"><br>
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                         <li>
+                            <image src="figures/github_icon.png" height="120px"><br>
+                                <h4><strong>Code (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <!-- <div class="row"> -->
+        <!--     <div class="col-md-8 col-md-offset-2"> -->
+        <!--         <h3> -->
+        <!--             Animation  -->
+        <!--         </h3> -->
+        <!--         <div class="text-center"> -->
+        <!--             <img src="figures/anim.gif" style="max-width:100%"> -->
+        <!--         </div> -->
+        <!--         </div> -->
+        <!-- </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Lighting effects such as shadows or reflections are key in making synthetic images realistic and visually appealing. To generate such effects, traditional computer graphics uses a physically-based renderer along with 3D geometry. To compensate for the lack of geometry in 2D Image compositing, recent deep learning-based approaches introduced a pixel height representation to generate soft shadows and reflections. However, the lack of geometry limits the quality of the generated soft shadows and constrains reflections to pure specular ones.
+We introduce PixHt-Lab, a system leveraging an explicit mapping from pixel height representation to 3D space. Using this mapping, PixHt-Lab reconstructs both the cutout and background geometry and renders realistic, diverse, lighting effects for image compositing. Given a surface with physically-based materials, we can render reflections with varying glossiness. To generate more realistic soft shadows, we further propose to use 3D-aware buffer channels to guide a neural renderer. Both quantitative and qualitative evaluations demonstrate that PixHt-Lab significantly improves soft shadow generation.                </p>
+                <br>
+                <image src="figures/pipeline.png" class="img-responsive" alt="overview"><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                   Real World Examples
+                </h3>
+                <div class="text-center">
+                    <image src="figures/more_results2.png" class="img-responsive" alt="overview"><br>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                  Controllable Physics-Based Reflection
+                </h3>
+                <div class="text-center">
+                    <image src="figures/controllable_reflection.png" class="img-responsive" alt="overview"><br>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                   More Results 
+                </h3>
+                <div class="text-center">
+                    <image src="figures/more_results.png" class="img-responsive" alt="overview"><br>
+                    </div>
+                </div>
+        </div>
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Technical Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;">
+                        <iframe align="center" width="100%" height="422" src="https://www.youtube.com/embed/_bhTd9GxCBQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+                        Coming soon.
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p>
+                    Part of this work was done during Yichen’s internship at Adobe Research.                 </p>
+                <p>
+                    The website template was borrowed from 
+                    <a href="http://mgharbi.com/">Micha&euml;l Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
